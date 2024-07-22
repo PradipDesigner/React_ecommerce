@@ -17,8 +17,8 @@ function MyCart({cartItem}) {
       <div className="container">
       <div className="col-md-6 mx-auto text-center">
         <div className="d-flex align-items-center flex-column justify-content-center gap-2" style={{ height: 'calc(100vh - 160px)' }}>
-          <h1>No item in cart.</h1>
-          <button className='btn btn-dark' onClick={() => navigate('/')}>Continue shoping</button>
+          <h1>Your cart is empty.</h1>
+          <button className='btn btn-outline-dark' onClick={() => navigate('/')}>Continue shoping</button>
         </div>
       </div>
     </div>

@@ -99,7 +99,7 @@ function SignUp() {
               </div>
               <div className="align-items-center d-flex justify-content-between gap-3 flex-wrap">
                 <input type="submit" className="btn btn-dark" value="Ragister" />
-                <p className='m-0'>If you have already ragister. Please <Link to="/login">login here</Link></p>
+                <p className='m-0'>already have an account. <Link to="/login">log in here</Link></p>
               </div>
             </form>
           </div>

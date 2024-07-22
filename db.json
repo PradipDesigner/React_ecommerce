@@ -29,6 +29,12 @@
       "name": "john",
       "username": "john1@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "7830",
+      "name": "johnny",
+      "username": "joy@gmail.com",
+      "password": "12345"
     }
   ],
   "products": [
@@ -224,6 +230,23 @@
         "count": 10
       },
       "userId": "2e58"
+    },
+    {
+      "id": "005",
+      "image": "images/5.jpg",
+      "company": "Roadster",
+      "item_name": "Pure Cotton T-shirt",
+      "original_price": 1399,
+      "current_price": 489,
+      "discount_percentage": 65,
+      "return_period": 14,
+      "delivery_date": "10 Oct 2023",
+      "category": "men's wear",
+      "rating": {
+        "stars": 4.2,
+        "count": 3500
+      },
+      "userId": "c20a"
     }
   ]
 }

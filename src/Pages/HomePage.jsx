@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import Toast from '../component/Toast'
 import Container from '../component/Container'
 import Banner from '../component/Banner'
+import Carousel from '../component/Banner'
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -114,11 +115,11 @@ export default function HomePage() {
   const ShowProduct = () => {
     return (
       <>
-      <Banner />
+      <Carousel />
       <Container>
         <div className="row">
           <div className="col-md-12">
-          <h2 className="display-5 text-center">Latest Products</h2>
+          <h2 className="display-5 m-0 py-3 text-center">Latest Products</h2>
           <hr />
           </div>
         </div>

@@ -26,7 +26,7 @@ function Login({ setUser }) {
       user.username === username && user.password === password
     )
     if (user) {
-      showAlert('Login success.', "show bg-success")
+      showAlert('Login success.', "show bg-success text-white")
       setTimeout(() => {
         navigate('/')
       }, 3000);
