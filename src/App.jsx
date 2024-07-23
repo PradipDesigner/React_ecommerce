@@ -14,11 +14,12 @@ import About from './Pages/About'
 import ProductDetails from './Pages/ProductDetails'
 import PageNotFound from './Pages/PageNotFound'
 import ContactUs from './Pages/ContactUs'
+import Toast from './component/Toast'
 function App() {
   const [user, setUser] = useState('')
+  const [alert , setAlert] = useState(null)
   const dispatch = useDispatch()
 
-  const cartItem = useSelector((store) => store.bags)
   const isUserLogedIn = localStorage.getItem('isLoggedIn') !== null;
   const userId = localStorage.getItem('userId')
 
@@ -45,16 +46,33 @@ function App() {
     }
 
   }, [dispatch]);
+
+
+  const showAlert = (message, style, headMsg) => {
+    setAlert({
+      msg: message,
+      style: style,
+      headMsg: headMsg,
+    })
+    setTimeout(() => {
+      setAlert({
+        msg: "",
+        style: "",
+        headMsg:"",
+      })
+    }, 5000);
+  }
   return (
     <>
       <BrowserRouter>
-        <Header userName={user} />
+      <Toast alert={alert} />
+        <Header userName={user} showAlert={showAlert}/>
         <div className="wrapper py-4">
           <Routes>
-            <Route path="/" element={<HomePage />}></Route>
-            <Route path="/Mycart" element={<MyCart cartItem={cartItem} />}></Route>
-            <Route path='/ragister' element={<SignUp />}></Route>
-            <Route path='/login' element={<Login setUser={setUser} />}></Route>
+            <Route path="/" element={<HomePage showAlert={showAlert}/>}></Route>
+            <Route path="/Mycart" element={<MyCart />}></Route>
+            <Route path='/ragister' element={<SignUp showAlert={showAlert}/>}></Route>
+            <Route path='/login' element={<Login setUser={setUser} showAlert={showAlert}/>}></Route>
             <Route path="/aboutUs" element={<About />}></Route>
             <Route path='/contactUs' element={<ContactUs/>} />
             <Route path="/product" element={<ProductDetails/>}/>

@@ -6,13 +6,14 @@ import { useNavigate } from 'react-router-dom'
 import { bagActions } from '../store/bagSlics'
 import Container from '../component/Container'
 
-function MyCart({cartItem}) {
+function MyCart() {
   const navigate = useNavigate()
-  
+  const cartData = useSelector((store) => store.bags)
+
 
   // no data in cart than display this
   
-  if (cartItem.length === 0) {
+  if (cartData.length === 0) {
     return <Container>
       <div className="container">
       <div className="col-md-6 mx-auto text-center">
@@ -27,7 +28,7 @@ function MyCart({cartItem}) {
     // data in cart than display this
     return <Container>
       <div className="bag-items-container">
-        {cartItem.map((items) => <CartItem cartItem={items} key={items.id} />)}
+        {cartData.map((items) => <CartItem cartItem={items} key={items.id} />)}
       </div>
 
       <div className="bag-summary">

@@ -3,13 +3,7 @@ import { useSelector } from 'react-redux'
 
 const CartSummary = () => {
     const bagItems = useSelector((store)=> store.bags)
-    const items = useSelector((store)=> store.items)
-    // console.log(bagItemsId, items)
-
-    // const finalItems = items.filter((result)=> {
-    //     const itemIndex = bagItemsId.indexOf(result.id)
-    //     return itemIndex >= 0
-    // })
+    
     const CONVENIENCE_FEE = 99;
     let total_items = bagItems.length;
     let item_price = 0;

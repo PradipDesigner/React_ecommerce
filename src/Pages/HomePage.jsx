@@ -10,10 +10,10 @@ import Container from '../component/Container'
 import Banner from '../component/Banner'
 import Carousel from '../component/Banner'
 
-export default function HomePage() {
+export default function HomePage({showAlert}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [alert, setAlert] = useState(null)
+  // const [alert, setAlert] = useState(null)
   const items = useSelector((store) => store.items);
   const [loader, setLoader] = useState(false);
   const [filterItems, setFilterItems] = useState([]);
@@ -39,17 +39,19 @@ export default function HomePage() {
 
       dispatch(bagActions.addTobag({ id: item.id, ...item }))
 
-      showAlert("items added in your cart", "show bg-success text-white")
+      showAlert("items added in your cart", "show bg-success text-white", "Success")
     } 
     // if user not login data set in localstorage
     else {
-      showAlert("Please Login!", "show bg-warning text-black")
+      showAlert("Please Login!", "show bg-warning text-black", "Warning")
 
      setTimeout(() => {
       navigate('/login')
-     }, 5000000000);
+     }, 7000);
     }
   };
+  
+  // cart data remove function
   const removeFromCart = async (itemId) => {
     if (isUserLogedIn) {
       await fetch(`http://localhost:3000/myCart/${itemId}?userId=${userId}`, {
@@ -61,22 +63,10 @@ export default function HomePage() {
       localStorage.setItem('cart', JSON.stringify(localCart));
     }
     dispatch(bagActions.removeTobag(itemId));
-    showAlert("items deleted from your cart", "show bg-danger text-white")
+    showAlert("items deleted from your cart", "show bg-danger text-white", "Alert")
 
   };
 
-  const showAlert =(message, style)=>{
-    setAlert({
-      msg:message,
-      style: style,
-    })
-    setTimeout(() => {
-      setAlert({
-        msg:"",
-        style: "",
-      })
-    }, 5000);
-  }
   useEffect(() => {
     setLoader(true)
     fetch('http://localhost:3000/products')
@@ -88,6 +78,8 @@ export default function HomePage() {
       })
 
   }, [dispatch])
+
+  // category filter function
   const filter = (category) => {
     if (category === 'all') {
       setFilterItems(items)
@@ -99,11 +91,7 @@ export default function HomePage() {
 
   }
 
-  const GotoProduct =(productId)=>{
-    console.log(productId)
-    navigate(`/product/${productId}`)
-  }
-
+  
   const Loader = () => {
     return (
       <div className="text-center p-5">
@@ -131,7 +119,7 @@ export default function HomePage() {
             <button type="button" className="btn btn-sm m-2 btn-outline-dark" onClick={() => filter('electric')}>Electronics</button>
         </div>
         <div className="row">
-          {filterItems.map((items) => <ProductCard key={items.id} product={items} hanledAddcart={addToCart} removeFromCart={removeFromCart} GotoProduct={GotoProduct} />)}
+          {filterItems.map((items) => <ProductCard key={items.id} product={items} hanledAddcart={addToCart} removeFromCart={removeFromCart} />)}
         </div>
       </Container>
       </>
@@ -141,7 +129,7 @@ export default function HomePage() {
 
   return (
     <>
-    <Toast alert={alert}/>
+    {/* <Toast alert={alert}/> */}
       {loader ? <Loader /> : <ShowProduct />}
 
     </>

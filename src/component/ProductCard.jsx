@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-function ProductCard({ product, hanledAddcart, removeFromCart , GotoProduct}) {
+function ProductCard({ product, hanledAddcart, removeFromCart}) {
     const bagItems = useSelector((store) => store.bags)
     const elementFound = bagItems.some(item => item.id === product.id);
 

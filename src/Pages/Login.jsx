@@ -4,12 +4,12 @@ import { bagActions } from '../store/bagSlics'
 import { useDispatch } from 'react-redux'
 import Toast from '../component/Toast'
 import Container from '../component/Container'
-function Login({ setUser }) {
+function Login({ setUser , showAlert}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   // const [error, setError] = useState('')
   // const [SuccessMsg, setSuccessMsg] = useState('')
-  const [alert, setAlert] = useState(null)
+  // const [alert, setAlert] = useState(null)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -19,14 +19,14 @@ function Login({ setUser }) {
     e.preventDefault()
     let response = await fetch(URL)
     if (!response) {
-      showAlert('Network response was not ok ', "show bg-danger")
+      showAlert('Network response was not ok ', "show bg-danger", "Alert")
     }
     const users = await response.json();
     const user = users.find((user) =>
       user.username === username && user.password === password
     )
     if (user) {
-      showAlert('Login success.', "show bg-success text-white")
+      showAlert('Login success.', "show bg-success text-white", "Success")
       setTimeout(() => {
         navigate('/')
       }, 3000);
@@ -50,25 +50,14 @@ function Login({ setUser }) {
       }
     }
     else {
-      showAlert('Please enter correct userid and password.', "show text-white bg-danger")
+      showAlert('Please enter correct userid and password.', "show text-white bg-danger", "Alert")
 
     }
   }
-  const showAlert = (message, style) => {
-    setAlert({
-      msg: message,
-      style: style,
-    })
-    setTimeout(() => {
-      setAlert({
-        msg: "",
-        style: "",
-      })
-    }, 5000);
-  }
+  
   return (
       <>
-      <Toast alert={alert} />
+      {/* <Toast alert={alert} /> */}
       <Container>
       <h1 className='text-center'>Login</h1>
       <hr />

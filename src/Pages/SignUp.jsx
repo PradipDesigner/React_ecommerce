@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Toast from '../component/Toast';
 import Container from '../component/Container';
-function SignUp() {
+function SignUp({showAlert}) {
   const navigate = useNavigate();  //for navigate url
   const [user, setUser] = useState({ name: '', username: '', password: '' }) //for set user details
-  const [alert, setAlert] = useState('')
+  // const [alert, setAlert] = useState('')
 
   const HandleOnChange = (event) => {
     const { name, value } = event.target;
@@ -22,7 +22,11 @@ function SignUp() {
     const checkExitsUser = users.find((exitingUser) => exitingUser.username === user.username) //validate exiting user
     // if user already ragister
     if (checkExitsUser) {
-      showAlert("This Email Already ragister Please Login", "show bg-danger text-white")
+      showAlert("This Email Already ragister Please Login", "show bg-danger text-white", "Alert")
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 3000);
     }
     else {
       const response = await fetch('http://localhost:3000/users', {
@@ -36,28 +40,17 @@ function SignUp() {
 
       if (result) {
         // localStorage.setItem('user', JSON.stringify(user))
-        showAlert('Your account SignUp successfully. Please login now!', 'bg-success show text-white')
+        showAlert('Your account SignUp successfully. Please login now!', 'bg-success show text-white', 'Success')
         setTimeout(() => {
           navigate("/login");
         }, 2000);
       }
     }
   };
-  const showAlert = (message, style) => {
-    setAlert({
-      msg: message,
-      style: style,
-    })
-    setTimeout(() => {
-      setAlert({
-        msg: "",
-        style: "",
-      })
-    }, 5000);
-  }
+  
   return (
     <>
-      <Toast alert={alert} />
+      {/* <Toast alert={alert} /> */}
       <Container>
         <h1 className='text-center'>Ragister</h1>
         <hr />

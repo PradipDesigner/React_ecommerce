@@ -7,33 +7,15 @@
       "password": "12345"
     },
     {
-      "id": "13cc",
-      "name": "pramod",
-      "username": "pramod@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "25cb",
-      "name": "krunal",
-      "username": "krunal@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": "2e58",
-      "name": "johm",
+      "id": "b205",
+      "name": "john",
       "username": "john@gmail.com",
       "password": "12345"
     },
     {
-      "id": "e587",
-      "name": "john",
-      "username": "john1@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "7830",
-      "name": "johnny",
-      "username": "joy@gmail.com",
+      "id": "afaf",
+      "name": "demo",
+      "username": "demo@gmail.com",
       "password": "12345"
     }
   ],
@@ -214,23 +196,6 @@
     }
   ],
   "myCart": [
-    {
-      "id": "004",
-      "image": "images/4.jpg",
-      "company": "ADIDAS",
-      "item_name": "Indian Cricket ODI Jersey",
-      "original_price": 999,
-      "current_price": 999,
-      "discount_percentage": 0,
-      "return_period": 14,
-      "delivery_date": "10 Oct 2023",
-      "category": "men's wear",
-      "rating": {
-        "stars": 5,
-        "count": 10
-      },
-      "userId": "2e58"
-    },
     {
       "id": "005",
       "image": "images/5.jpg",

@@ -10,36 +10,36 @@ const ContactUs = props => {
         <div className="row">
         <div className="col-md-6 mt-4 mx-auto">
             <form>
-              <div class="form my-3">
-                <label for="Name">Name</label>
+              <div className="form my-3">
+                <label htmlFor="Name">Name</label>
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="Name"
                   placeholder="Enter your name"
                 />
               </div>
-              <div class="form my-3">
-                <label for="Email">Email</label>
+              <div className="form my-3">
+                <label htmlFor="Email">Email</label>
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="Email"
                   placeholder="name@example.com"
                 />
               </div>
-              <div class="form  my-3">
-                <label for="Password">Message</label>
+              <div className="form  my-3">
+                <label htmlFor="Password">Message</label>
                 <textarea
                   rows={5}
-                  class="form-control"
+                  className="form-control"
                   id="Password"
                   placeholder="Enter your message"
                 />
               </div>
               <div className="text-center">
                 <button
-                  class="my-2 px-4 mx-auto btn btn-dark"
+                  className="my-2 px-4 mx-auto btn btn-dark"
                   type="submit"
                   disabled
                 >
