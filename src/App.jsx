@@ -9,12 +9,12 @@ import MyCart from './Pages/MyCart'
 import Login from './Pages/Login'
 import { useDispatch } from 'react-redux'
 import { bagActions } from './store/bagSlics'
-import { useSelector } from 'react-redux'
 import About from './Pages/About'
-import ProductDetails from './Pages/ProductDetails'
+import ProductDetails from './component/ProductDetails'
 import PageNotFound from './Pages/PageNotFound'
 import ContactUs from './Pages/ContactUs'
 import Toast from './component/Toast'
+import CheckOut from './Pages/CheckOut'
 function App() {
   const [user, setUser] = useState('')
   const [alert , setAlert] = useState(null)
@@ -75,8 +75,9 @@ function App() {
             <Route path='/login' element={<Login setUser={setUser} showAlert={showAlert}/>}></Route>
             <Route path="/aboutUs" element={<About />}></Route>
             <Route path='/contactUs' element={<ContactUs/>} />
-            <Route path="/product" element={<ProductDetails/>}/>
+            <Route path="/product/:id" element={<ProductDetails/>}/>
             <Route path='*' element={<PageNotFound/>} />
+            <Route path='/checkout' element={<CheckOut/>} />
           </Routes>
         </div>
         <Footer />

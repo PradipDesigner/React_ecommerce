@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Container from '../component/Container'
 
-const ContactUs = props => {
+const ContactUs = () => {
   return (
     <Container>
         <h1 className='text-center'>Contact Us</h1>

@@ -62,7 +62,7 @@ function Login({ setUser , showAlert}) {
       <h1 className='text-center'>Login</h1>
       <hr />
       <div className="row">
-        <div className="col-lg-6 mx-auto mt-4">
+        <div className="col-lg-6 col-md-8 mx-auto mt-4">
 
           <form onSubmit={HandelSubmit}>
             <div className="mb-3">

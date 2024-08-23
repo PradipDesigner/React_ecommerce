@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 const CartSummary = () => {
     const bagItems = useSelector((store)=> store.bags)
@@ -10,7 +11,6 @@ const CartSummary = () => {
     let discount = 0;
 
     bagItems.forEach((element) => {
-        console.log(element)
         item_price += element.original_price
         discount += element.original_price - element.current_price
     });
@@ -37,9 +37,10 @@ const CartSummary = () => {
             <span className="price-item-value">₹{final_amount}</span>
           </div>
         </div>
-        <button className="btn-place-order">
-          <div className="css-xjhrni">PLACE ORDER</div>
-        </button>
+        {/* <Link to='/checkout' className="btn btn-primary w-100">
+          PLACE ORDER
+        </Link> */}
+        <button className='btn btn-primary w-100'>PLACE ORDER</button>
     </>
   )
 }

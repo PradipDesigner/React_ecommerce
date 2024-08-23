@@ -27,12 +27,14 @@ function MyCart() {
   } else {
     // data in cart than display this
     return <Container>
-      <div className="bag-items-container">
+      <div className="row">
+      <div className="col-md-8 bag-items-container">
         {cartData.map((items) => <CartItem cartItem={items} key={items.id} />)}
       </div>
 
-      <div className="bag-summary">
+      <div className="col-md-4 bag-summary">
         <CartSummary />
+      </div>
       </div>
     </Container>
   }

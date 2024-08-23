@@ -55,7 +55,7 @@ function SignUp({showAlert}) {
         <h1 className='text-center'>Ragister</h1>
         <hr />
         <div className="row">
-          <div className="col-md-6 mx-auto mt-4">
+          <div className="col-lg-6 col-md-8 mx-auto mt-4">
             <form onSubmit={SignUp}>
               <div className="mb-3">
                 <input

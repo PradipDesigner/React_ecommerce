@@ -91,7 +91,6 @@ export default function HomePage({showAlert}) {
 
   }
 
-  
   const Loader = () => {
     return (
       <div className="text-center p-5">
