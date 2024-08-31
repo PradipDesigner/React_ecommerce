@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { bagActions } from '../store/bagSlics';
 function Header({ userName, showAlert }) {
   const bagItems = useSelector((store) => store.bags);
@@ -25,34 +25,31 @@ function Header({ userName, showAlert }) {
     }, 1000);
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light position-sticky top-0 z-3">
+    <nav className="navbar navbar-expand-lg custom-nav bg-dark position-sticky top-0 z-3">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">React_Ecommerce</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+          <span className="bi bi-list"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto text-center">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <NavLink activeclassname="active" className="nav-link" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/aboutUs">About Us</Link>
+              <NavLink activeclassname="active" className="nav-link" to="/aboutUs">About Us</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contactUs">Contact Us</Link>
+              <NavLink activeclassname="active" className="nav-link" to="/contactUs">Contact Us</NavLink>
             </li>
           </ul>
             <ul className="navbar-nav ms-auto text-center">
               {!localStorage.getItem('userName') ? (<>
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/ragister">Ragister</Link>
+                  <NavLink className="nav-link" activeclassname="active" to="/login">Login</NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">Login</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link position-relative" to="/Mycart"><i className='bi bi-cart-check-fill'></i> ({bagItems.length})</Link>
+                  <NavLink className="nav-link position-relative" to="/Mycart"><i className='bi bi-cart-check-fill'></i> ({bagItems.length})</NavLink>
                 </li>
               </>) :
                 <>

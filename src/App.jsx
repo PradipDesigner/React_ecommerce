@@ -71,7 +71,6 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage showAlert={showAlert}/>}></Route>
             <Route path="/Mycart" element={<MyCart />}></Route>
-            <Route path='/ragister' element={<SignUp showAlert={showAlert}/>}></Route>
             <Route path='/login' element={<Login setUser={setUser} showAlert={showAlert}/>}></Route>
             <Route path="/aboutUs" element={<About />}></Route>
             <Route path='/contactUs' element={<ContactUs/>} />

@@ -32,7 +32,7 @@ const ProductDetails = () => {
         </div>
       </div>
       <div className="remove-from-cart">
-        <button className='btn btn-danger' ><i className='bi bi-trash'></i></button>
+        <button className='btn btn-danger' ><i className='bi bi-cart'></i> Add cart</button>
       </div>
     </div>
     </Container>
