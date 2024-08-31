@@ -102,7 +102,7 @@ export default function HomePage({showAlert}) {
   const ShowProduct = () => {
     return (
       <>
-      {/* <Carousel /> */}
+      <Carousel />
       <Container>
         <div className="row">
           <div className="col-md-12">
