@@ -98,7 +98,7 @@ function Login({ setUser, showAlert }) {
                   <div className="align-items-center d-flex justify-content-between gap-3 flex-wrap">
                     <input
                       type="submit"
-                      className="btn btn-dark"
+                      className="btn btn-primary"
                       value="Submit"
                     />
                     <p className="d-block d-md-none m-0">
@@ -122,10 +122,10 @@ function Login({ setUser, showAlert }) {
                 <h3>Welcome back!</h3>
                 <p>You have already have an account than click below Button</p>
               </div>
-              <button className="btn btn-dark signup" onClick={()=> setToggleClass("active")}>
+              <button className="btn btn-primary signup" onClick={()=> setToggleClass("active")}>
                 SignUp
               </button>
-              <button className="btn btn-dark signIn" onClick={()=> setToggleClass('')}>
+              <button className="btn btn-primary signIn" onClick={()=> setToggleClass('')}>
                 Sign In
               </button>
             </div>

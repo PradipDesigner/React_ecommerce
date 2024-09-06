@@ -102,9 +102,9 @@ function SignUp({ showAlert, setToggleClass }) {
         </label>
       </div>
       <div className="align-items-center d-flex justify-content-between gap-3 flex-wrap">
-        <input type="submit" className="btn btn-dark" value="Ragister" />
+        <input type="submit" className="btn btn-primary" value="Ragister" />
 
-        <p className="m-0">
+        <p className="m-0 d-inline-block d-md-none">
           already have an account.{" "}
           <button
             type="button"

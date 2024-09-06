@@ -111,13 +111,13 @@ export default function HomePage({showAlert}) {
           </div>
         </div>
         <div className="text-center py-4">
-            <button type="button" className="btn btn-sm m-2 btn-outline-dark" onClick={() => filter('all')}>All</button>
-            <button type="button" className="btn btn-sm m-2 btn-outline-dark" onClick={() => filter("men's wear")}>Men's wear</button>
-            <button type="button" className="btn btn-sm m-2 btn-outline-dark" onClick={() => filter("women's wear")}>Women's wear</button>
-            <button type="button" className="btn btn-sm m-2 btn-outline-dark" onClick={() => filter('jewelery')}>Jewelery</button>
-            <button type="button" className="btn btn-sm m-2 btn-outline-dark" onClick={() => filter('electric')}>Electronics</button>
+            <button type="button" className={`btn btn-sm m-2 btn-outline-dark`} onClick={() => filter('all')}>All</button>
+            <button type="button" className={`btn btn-sm m-2 btn-outline-dark`} onClick={() => filter("men's wear")}>Men's wear</button>
+            <button type="button" className={`btn btn-sm m-2 btn-outline-dark`} onClick={() => filter("women's wear")}>Women's wear</button>
+            <button type="button" className={`btn btn-sm m-2 btn-outline-dark`} onClick={() => filter('jewelery')}>Jewelery</button>
+            <button type="button" className={`btn btn-sm m-2 btn-outline-dark`} onClick={() => filter('electric')}>Electronics</button>
         </div>
-        <div className="row">
+        <div className="product-card-container">
           {filterItems.map((items) => <ProductCard key={items.id} product={items} hanledAddcart={addToCart} removeFromCart={removeFromCart} />)}
         </div>
       </Container>

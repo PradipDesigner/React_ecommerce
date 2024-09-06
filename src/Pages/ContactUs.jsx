@@ -38,7 +38,7 @@ const ContactUs = () => {
               </div>
               <div className="text-center">
                 <button
-                  className="my-2 px-4 mx-auto btn btn-dark"
+                  className="my-2 px-4 mx-auto btn btn-primary"
                   type="submit"
                   disabled
                 >

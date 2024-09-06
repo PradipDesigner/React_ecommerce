@@ -11,6 +11,18 @@ body{
     Helvetica, Arial, sans-serif;
   box-sizing: border-box;
 }
+/* btn css */
+.btn{
+  font-size: 14px;
+}
+.btn.btn-primary {
+  background-color: #1e43b7;
+  color: #fff;
+  border-color: #1e43b7;
+}
+.btn.btn-danger{
+  background-color: #b53636;
+}
 .btn-link , a{
   color: #1e43b7;
 }
@@ -63,13 +75,15 @@ body{
 }
 .item-image {
   height: 200px;
-}
-.item-image img {
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px;}
+/* .item-image img {
   height: 100%;
   margin: auto;
   width: 100%;
   display: block;
-}
+} */
 
 .avtar {
   display: inline-block;
@@ -376,7 +390,31 @@ body{
 
 
 
-@media only screen and (max-width: 767.01px) {
+.product-card-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.product-card-container .product-card {
+  min-width: calc(20% - 20px);
+  max-width: calc(20% - 20px);
+}
+
+@media only screen and (max-width: 1199px) {
+  .product-card-container .product-card {
+    min-width: calc(25% - 20px);
+    max-width: calc(25% - 20px);
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .product-card-container .product-card {
+    min-width: calc(33% - 9px);
+    max-width: calc(33% - 9px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
   .Form-block {
     margin: 20px auto;
   }
@@ -384,4 +422,25 @@ body{
     display: none;
   }
   .Form-block.Form-block.active .form-sec{transform: translateX(0);}
+
+  .product-card-container .product-card {
+    min-width: calc(50% - 9px);
+    max-width: calc(50% - 9px);
+  }
 }
+
+@media only screen and (max-width: 600px) {
+  .product-card-container .product-card{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .card.product-card .card-body{
+    max-width: 60%;
+  }
+}
+
+
+
