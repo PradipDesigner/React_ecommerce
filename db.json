@@ -234,6 +234,40 @@
         "count": 388
       },
       "userId": "f5b8"
+    },
+    {
+      "id": "005",
+      "image": "/images/5.jpg",
+      "company": "Roadster",
+      "item_name": "Pure Cotton T-shirt",
+      "original_price": 1399,
+      "current_price": 489,
+      "discount_percentage": 65,
+      "return_period": 14,
+      "delivery_date": "10 Oct 2023",
+      "category": "men's wear",
+      "rating": {
+        "stars": 4.2,
+        "count": 3500
+      },
+      "userId": "c20a"
+    },
+    {
+      "id": "006",
+      "image": "/images/6.jpg",
+      "company": "Nike",
+      "item_name": "Men ReactX Running Shoes",
+      "original_price": 14995,
+      "current_price": 14995,
+      "discount_percentage": 0,
+      "return_period": 14,
+      "delivery_date": "10 Oct 2023",
+      "category": "men's wear",
+      "rating": {
+        "stars": 0,
+        "count": 0
+      },
+      "userId": "c20a"
     }
   ]
 }
